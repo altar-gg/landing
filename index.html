@@ -57,7 +57,7 @@
 				<div class="container">
 					<div class="hero-inner">
 						<div class="hero-copy">
-							<h1 class="hero-title mt-0 is-revealing">altar.gg</h1>
+							<h1 class="hero-title mt-0 is-revealing">altar.gg – soon™</h1>
 							<p class="hero-paragraph is-revealing">A platform for mod creators, built by mod creators, controlled by mod creators.</p>
 							<div class="hero-form field field-grouped is-revealing">
 								<div class="control control-expanded">
@@ -446,42 +446,6 @@
 	</div>
 
 	<script src="dist/js/main.min.js"></script>
-	<script>
-	
-		let email_element = document.querySelector("input[type=email]");
-		let button_element = document.querySelector(".button, .button-primary");
-		
-		email_element.addEventListener("keyup", (event) => {
-			if (event.keyCode !== 13) return;
-			window.notify();
-		});
-		
-		let sent = false;
-		window.notify = function () {
-			if (sent) return;
-			sent = true;
-			
-			email_element.setAttribute("disabled", true);
-			let email = email_element.value;
-			
-			fetch("https://altar-notify.bae.workers.dev/" + email).then((request) => {
-				if (!request.ok) {
-					email_element.removeAttribute("disabled");
-					button_element.innerText = "Notify";
-					sent = false;
-					return;
-				}
-				
-				button_element.innerText = "Thank you";
-				
-			}).catch(() => {
-				email_element.removeAttribute("disabled");
-				button_element.innerText = "Notify";
-				sent = false;
-			})
-		}
-		
-	</script>
 </body>
 
 </html>
