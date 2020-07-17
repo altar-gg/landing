@@ -1,2 +1,2 @@
 # altar.gg landing
-https://alter.gg/
+https://altar.gg/
